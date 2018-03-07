@@ -4,7 +4,7 @@ n = int(input())  # Number of words
 
 
 def word_order(n):
-    dict = OrderedDict()
+    dict1 = OrderedDict()
     for i in range(n):
         words = input()  # Words
         if words not in dict.keys():
@@ -13,5 +13,5 @@ def word_order(n):
         dict[words] += 1
 
     print(len(dict.keys()))
-    print(*dict.values())
+    print(*dict1.values())
 word_order(n)
