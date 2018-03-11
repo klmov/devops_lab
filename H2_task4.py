@@ -8,9 +8,9 @@ def word_order(n):
     for i in range(n):
         words = input()  # Words
         if words not in dict.keys():
-            dict.update({words: 1})
+            dict1.update({words: 1})
             continue
-        dict[words] += 1
+        dict1[words] += 1
 
     print(len(dict.keys()))
     print(*dict1.values())
