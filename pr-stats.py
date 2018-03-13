@@ -2,8 +2,7 @@ import argparse
 import requests
 import json
 import getpass
-username = str(input("Enter your GitHub username: "))
-password = getpass.getpass(prompt='Enter your password: ')
+
 
 
 def ArgParser():
@@ -82,11 +81,11 @@ def Labels():
 
 
 def State(item):
-    state = "State: \033[92m" + item.get("state") + "\033[0m"
+    state = item.get("state") + "\033[0m"
     if item.get("state") == 'open':
-        return state
+        return "State: \033[92m" + state
     else:
-        return state + " Closed at:" + item.get('closed_at')
+        return "State: \033[91m" + state + " Closed at:" + item.get('closed_at')
 
 
 def Merge(item):
@@ -115,6 +114,9 @@ def Parse(url):
         exit()
 
 arg = ArgParser()
+
+username = str(input("Enter your GitHub username: "))
+password = getpass.getpass(prompt='Enter your password: ')
 
 if arg.merged or arg.created or arg.attached or arg.pushed:
     Pulls(arg)
