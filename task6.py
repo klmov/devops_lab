@@ -4,7 +4,6 @@ import site
 import sys
 import yaml
 
-print("Python Info")
 
 
 def getData():
@@ -42,11 +41,13 @@ def yamlOut(data):
                   yaml_file,
                   default_flow_style=False)
 
-data = getData()
-print(json.dumps(data,
-                 sort_keys=False,
-                 indent=5,
-                 ensure_ascii=False))
+if __name__ == '__main__':
+    print("Python Info")
+    data = getData()
+    print(json.dumps(data,
+                    sort_keys=False,
+                    indent=5,
+                    ensure_ascii=False))
 
-jsonOut(data)
-yamlOut(data)
+    jsonOut(data)
+    yamlOut(data)

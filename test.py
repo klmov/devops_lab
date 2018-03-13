@@ -6,10 +6,12 @@ class TestPyInfo(unittest.TestCase):
     """Unittest Class"""
     def setUp(self):
         """Init"""
+    def test_getData(self):
+        self.assertTrue(type(task6.getData()) is dict)
 
-    def Pytest(self):
-        self.assertTrue(task6.jsonOut())
-        self.assertTrue(task6.yamlOut())
+    def test_Pyinfo(self):
+        self.assertTrue(task6.jsonOut(task6.getData()) is None)
+        self.assertTrue(task6.yamlOut(task6.getData()) is None)
 
     def tearDown(self):
         """Finish"""
